@@ -1,0 +1,18 @@
+name: pi_book
+channels:
+  - default
+dependencies:
+  - python=3.8
+  - sphinx
+  - pip
+  - pandas
+  - matplotlib
+  - numpy
+  - autograd
+  - scipy
+  - numba
+  - ipywidgets
+  - IPython
+  - plotly
+  - pip:
+    - jupyter-book

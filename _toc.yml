@@ -1,0 +1,7 @@
+format: jb-article
+root: index
+sections:
+- file: model_construction
+- file: notebook1
+- file: notebook2
+- file: special_issue
