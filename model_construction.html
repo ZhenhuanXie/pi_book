@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Model Construction &#8212; Stochastic Growth and Long-Run Risk</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User Interface" href="notebook1.html" />
+    <link rel="prev" title="Stochastic Growth and Long-Run Risk" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/income.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Stochastic Growth and Long-Run Risk</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Model Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook1.html">
+   User Interface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook2.html">
+   Code details
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="special_issue.html">
+   Special Issue
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/model_construction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/model_construction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ZhenhuanXie/pi_book/master?urlpath=tree/model_construction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preference-recursive-utility-with-habit-persistence">
+   Preference: Recursive Utility with Habit Persistence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technology-ak-with-non-financial-income">
+   Technology: AK with Non-Financial Income
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stochastic-discount-factor-foc-on-investment">
+   Stochastic Discount Factor; FOC on investment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="model-construction">
+<span id="id1"></span><h1>Model Construction<a class="headerlink" href="#model-construction" title="Permalink to this headline">¶</a></h1>
+<section id="preference-recursive-utility-with-habit-persistence">
+<h2>Preference: Recursive Utility with Habit Persistence<a class="headerlink" href="#preference-recursive-utility-with-habit-persistence" title="Permalink to this headline">¶</a></h2>
+<p>We introduce <span class="math notranslate nohighlight">\(U_t\)</span> via a CES aggregator of current consumption <span class="math notranslate nohighlight">\(C_t\)</span> and a household stock variable <span class="math notranslate nohighlight">\(H_t\)</span>. <span class="math notranslate nohighlight">\(H_t\)</span>, which is a geometrically weighted average of current and past consumptions and the initial <span class="math notranslate nohighlight">\(H_0\)</span>, can be interpreted either as habits or as durable goods.</p>
+<p>A representative household ranks <span class="math notranslate nohighlight">\(\{U_t: t\geq 0\}\)</span> processes with a utility functional <span class="math notranslate nohighlight">\(\{V_t: t\geq 0\}\)</span> processes. We also introduce an <span class="math notranslate nohighlight">\(\{R_t: t\geq 0\}\)</span> process as a risk adjusted version of  <span class="math notranslate nohighlight">\(\{V_t: t\geq 0\}\)</span>, called a certainty equivalent. <span class="math notranslate nohighlight">\(V_t\)</span>, <span class="math notranslate nohighlight">\(R_t\)</span>, <span class="math notranslate nohighlight">\(U_t\)</span> and <span class="math notranslate nohighlight">\(H_t\)</span> are defined via the following recursion:</p>
+<div class="math notranslate nohighlight">
+\[    V_t = \left[(1-\beta)U_t^{1-\rho}+\beta R_t^{1-\rho}\right]^{\frac{1}{1-\rho}} \]</div>
+<p>In the special case of <span class="math notranslate nohighlight">\(\rho = 1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[    V_t = U_t^{1-\beta}R_t^{\beta} \]</div>
+<div class="math notranslate nohighlight">
+\[    R_t = \mathbb{E}\left[V_{t+1}^{1-\gamma} \mid {\mathfrak F}_t\right]^{\frac{1}{1-\gamma}} \]</div>
+<div class="math notranslate nohighlight">
+\[    U_t = \left[(1-\alpha)C_t^{1-\epsilon}+\alpha H_t^{1-\epsilon}\right]^{\frac{1}{1-\epsilon}} \]</div>
+<p>In the special case of <span class="math notranslate nohighlight">\(\epsilon = 1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[    U_t = C_t^{1-\alpha} H_t^\alpha\]</div>
+<div class="math notranslate nohighlight">
+\[    H_{t+1}  = \chi H_t + (1-\chi) C_t \]</div>
+<p>Stochastic growth in the income process (will be introduced shortly) makes it natural to divide every variable in the above equations by <span class="math notranslate nohighlight">\(Y_t\)</span> to form a <strong>balanced growth version</strong>:</p>
+<div class="math notranslate nohighlight" id="equation-v-balanced">
+<span class="eqno">(1)<a class="headerlink" href="#equation-v-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{V_t}{Y_t} = \left[(1-\beta)\left(\frac{U_t}{Y_t}\right)^{1-\rho}+\beta\left(\frac{R_t}{Y_t}\right)^{1-\rho}\right]^{\frac{1}{1-\rho}}\]</div>
+<p>In the special case of <span class="math notranslate nohighlight">\(\rho = 1\)</span>, <a class="reference internal" href="#equation-v-balanced">(1)</a> becomes:</p>
+<div class="math notranslate nohighlight">
+\[    \frac{V_t}{Y_t} = \left(\frac{U_t}{Y_t}\right)^{1-\beta} \left(\frac{R_t}{Y_t}\right)^{\beta}\]</div>
+<div class="math notranslate nohighlight" id="equation-r-balanced">
+<span class="eqno">(2)<a class="headerlink" href="#equation-r-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{R_t}{Y_t} = \mathbb{E}\left[\left(\frac{V_{t+1}}{Y_{t+1}}\frac{Y_{t+1}}{Y_t}\right)^{1-\gamma} | {\mathfrak F}_t\right]^{\frac{1}{1-\gamma}}\]</div>
+<div class="math notranslate nohighlight" id="equation-u-balanced">
+<span class="eqno">(3)<a class="headerlink" href="#equation-u-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{U_t}{Y_t} = \left[(1-\alpha)\left(\frac{C_t}{Y_t}\right)^{1-\epsilon}+\alpha \left(\frac{H_t}{Y_t}\right)^{1-\epsilon}\right]^{\frac{1}{1-\epsilon}}\]</div>
+<p>In the special case of <span class="math notranslate nohighlight">\(\epsilon = 1\)</span>, <a class="reference internal" href="#equation-u-balanced">(3)</a> becomes:</p>
+<div class="math notranslate nohighlight">
+\[    \frac{U_t}{Y_t} = \left(\frac{C_t}{Y_t}\right)^{1-\alpha} \left(\frac{H_t}{Y_t}\right)^{\alpha}\]</div>
+<div class="math notranslate nohighlight" id="equation-h-balanced">
+<span class="eqno">(4)<a class="headerlink" href="#equation-h-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{H_{t+1}}{Y_{t+1}}\frac{Y_{t+1}}{Y_t}  = \chi \frac{H_t}{Y_t} + (1-\chi) \frac{C_t}{Y_t}\]</div>
+<p>The reciprocal of the parameter <span class="math notranslate nohighlight">\(\rho\)</span> describes the consumer’s attitudes toward intertemporal substitution, while the parameter <span class="math notranslate nohighlight">\(\gamma\)</span> describes the consumer’s attitudes toward risk.</p>
+</section>
+<section id="technology-ak-with-non-financial-income">
+<h2>Technology: AK with Non-Financial Income<a class="headerlink" href="#technology-ak-with-non-financial-income" title="Permalink to this headline">¶</a></h2>
+<p>We construct a nonlinear version of a permanent income technology in the spirit of Hansen et al. (1999) and Hansen and Sargent (2013, ch. 11) that assumes the consumer’s non-financial income process <span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span> is an exogenous multiplicative functional.</p>
+<div class="math notranslate nohighlight">
+\[    K_{t+1} - K_t +C_t = {\sf a} K_t + Y_t\]</div>
+<p>balanced growth version:</p>
+<div class="math notranslate nohighlight" id="equation-k-balanced">
+<span class="eqno">(5)<a class="headerlink" href="#equation-k-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{K_{t+1}}{Y_{t+1}} \frac{Y_{t+1}}{Y_t} -\frac{K_t}{Y_t} + \frac{C_t}{Y_t} = {\sf a} \frac{K_t}{Y_t} + 1\]</div>
+<p>We use this to define a model variable “scaled gross investment”:</p>
+<div class="math notranslate nohighlight" id="equation-investment">
+<span class="eqno">(6)<a class="headerlink" href="#equation-investment" title="Permalink to this equation">¶</a></span>\[    \frac{I_{t}}{Y_t} = \frac{K_{t+1} - K_t}{Y_t}\]</div>
+<p><span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span> has two components <span class="math notranslate nohighlight">\(Z_{1,t}\)</span> and <span class="math notranslate nohighlight">\(Z_{2,t}\)</span>, and they follow the recursion:</p>
+<div class="math notranslate nohighlight" id="equation-y-log-growth">
+<span class="eqno">(7)<a class="headerlink" href="#equation-y-log-growth" title="Permalink to this equation">¶</a></span>\[    \log Y_{t+1} - \log Y_t = D{Z_t} + FW_{t+1} + {\sf{g}}\]</div>
+<div class="math notranslate nohighlight" id="equation-exogenous">
+<span class="eqno">(8)<a class="headerlink" href="#equation-exogenous" title="Permalink to this equation">¶</a></span>\[    Z_{t+1} = AZ_t + BW_{t+1}\]</div>
+<p><span class="math notranslate nohighlight">\(Z_t\)</span> is a <span class="math notranslate nohighlight">\(3 \times 1\)</span> vector</p>
+<div class="math notranslate nohighlight">
+\[    Z_t = \left[Z_{1,t}, Z_{2,t}, Z_{2,t-1}\right]^{\prime}\]</div>
+<p>and <span class="math notranslate nohighlight">\(W_{t+1}\)</span> is a <span class="math notranslate nohighlight">\(2 \times 1\)</span> vector</p>
+<div class="math notranslate nohighlight">
+\[    W_{t+1} = \left[W_{1,t+1}, W_{2,t+1}\right]^{\prime}\]</div>
+<p>where <span class="math notranslate nohighlight">\(W_{1,t+1}\)</span> and <span class="math notranslate nohighlight">\(W_{2,t+1}\)</span> are shocks to <span class="math notranslate nohighlight">\(Z_{1,t+1}\)</span> and <span class="math notranslate nohighlight">\(Z_{2,t+1}\)</span>, respectively, and <span class="math notranslate nohighlight">\(W_{t+1}\)</span>  follows a standardized multivariate normal distribution.</p>
+<p>We assume the following parameter values originally estimated by Hansen et al. (1999):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \log(\frac{Y_{t+1}}{Y_t}) = .01(Z_{1,t+1}+Z_{2,t+1}-Z_{2,t}) = .01\left(\begin{bmatrix} .704 &amp; 0 &amp; -.154\end{bmatrix} \begin{bmatrix} Z_{1,t}\\Z_{2,t}\\Z_{2,t-1}\end{bmatrix} + \begin{bmatrix}.144 &amp; .206\end{bmatrix} \begin{bmatrix}W_{1,t+1}\\W_{2,t+1} \end{bmatrix}\right) + .00373\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \begin{bmatrix}Z_{1,t+1}\\Z_{2,t+1}\\Z_{2,t}\end{bmatrix} = \begin{bmatrix}.704 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; -.154\\ 0 &amp; 1 &amp; 0\end{bmatrix} \begin{bmatrix}Z_{1,t}\\Z_{2,t}\\Z_{2,t-1}\end{bmatrix} + \begin{bmatrix}.144 &amp; 0 \\0 &amp; .206 \\ 0 &amp; 0\end{bmatrix} \begin{bmatrix} W_{1,t+1}\\ W_{2,t+1}\end{bmatrix}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(W_{1,t+1}\)</span> and <span class="math notranslate nohighlight">\(W_{2,t+1}\)</span> play different roles in the non-financial income process. <span class="math notranslate nohighlight">\(W_{1,t+1}\)</span> has a permanent effect on income, while <span class="math notranslate nohighlight">\(W_{2,t+1}\)</span> only has a transient effect. This can be seen by computing and plotting the <strong>impulse response function</strong> of <span class="math notranslate nohighlight">\(\log Y_t\)</span> to each shock. Note that the responses are multiplied by 100 to reflect percentage responses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Income IRF graph</span>
+<span class="kn">from</span> <span class="nn">demonstration</span> <span class="kn">import</span> <span class="n">plot_figure_1</span>
+<span class="n">plot_figure_1</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_construction_1_0.png" src="_images/model_construction_1_0.png" />
+</div>
+</div>
+</section>
+<section id="stochastic-discount-factor-foc-on-investment">
+<h2>Stochastic Discount Factor; FOC on investment<a class="headerlink" href="#stochastic-discount-factor-foc-on-investment" title="Permalink to this headline">¶</a></h2>
+<p>SDF increment in units of <span class="math notranslate nohighlight">\(U_t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \widetilde{\frac{S_{t+1}}{S_t}} = \beta \left(\frac{V_{t+1}}{R_t}\right)^{1-\gamma} \left(\frac{V_{t+1}}{R_t}\right)^{\rho-1} \left(\frac{U_{t+1}}{U_t}\right)^{-\rho}\]</div>
+<p>Note that the <span class="math notranslate nohighlight">\( \left(\frac{V_{t+1}}{R_t}\right)^{1-\gamma}\)</span> term is written separately. This is because it is a random variable with mean 1 conditioned on time <span class="math notranslate nohighlight">\(t\)</span> information. Therefore, it represents a <strong>change of probability measure</strong> whenever we take a mathematical expectation. Specifically, <span class="math notranslate nohighlight">\(W_{t+1}\)</span>  follows a standardized multivariate  normal distribution under the “original” probability measure, but after taking into account of the change of measure, the distribution of <span class="math notranslate nohighlight">\(W_{t+1}\)</span> is different. <font color='red'>What differences? How many details shall we provide.</font> Therefore, the change of measure alters the structure of terms in which <span class="math notranslate nohighlight">\(W_{t+1}\)</span> is involved.</p>
+<p>We are more interested in viewing <span class="math notranslate nohighlight">\(C_t\)</span> rather than <span class="math notranslate nohighlight">\(U_t\)</span> as the numeraire. This leads us to introduce two additional equations in which enduring effects of consumption at <span class="math notranslate nohighlight">\(t\)</span> come into play. These equations in effect pin down two marginal rates of substitution, <span class="math notranslate nohighlight">\(\frac{MC_t}{MU_t}\)</span> and <span class="math notranslate nohighlight">\(\frac{MH_t}{MU_t}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\frac{MC_t}{MU_t}\)</span> has different specificiations depending on whether habit is “external (externality is ignored by the consumer)” or “internal (externality is internalized by the consumer)”.</p>
+<ul class="simple">
+<li><p>External:</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-mcmu-external">
+<span class="eqno">(9)<a class="headerlink" href="#equation-mcmu-external" title="Permalink to this equation">¶</a></span>\[    \frac{MC_t}{MU_t} = (1-\alpha)\left( \frac{U_t}{C_t} \right)^\epsilon\]</div>
+<ul class="simple">
+<li><p>Internal:</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-mcmu-internal">
+<span class="eqno">(10)<a class="headerlink" href="#equation-mcmu-internal" title="Permalink to this equation">¶</a></span>\[    \frac{MC_t}{MU_t} = (1-\alpha)\left( \frac{U_t}{C_t} \right)^\epsilon + (1-\chi) \mathbb{E}\left[\widetilde{\frac{S_{t+1}}{S_t}}\frac{MH_{t+1}}{MU_{t+1}} \Biggl| {\mathfrak F}_t\right]\]</div>
+<p>where <span class="math notranslate nohighlight">\(\frac{MH_t}{MU_t}\)</span> satisfies:</p>
+<div class="math notranslate nohighlight" id="equation-mhmu">
+<span class="eqno">(11)<a class="headerlink" href="#equation-mhmu" title="Permalink to this equation">¶</a></span>\[    \frac{MH_t}{MU_t} = \alpha\left( \frac{U_t}{H_t} \right)^\epsilon + \chi \mathbb{E}\left[\widetilde{\frac{S_{t+1}}{S_t}}\frac{MH_{t+1}}{MU_{t+1}} \Biggl| {\mathfrak F}_t \right]\]</div>
+<p>Then we have SDF increment in units of <span class="math notranslate nohighlight">\(C_t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \frac{S_{t+1}}{S_t} = \widetilde{\left(\frac{S_{t+1}}{S_t}\right)}\left(\frac{{MC_{t+1}}/{MU_{t+1}}}{{MC_t}/{MU_t}}\right)\]</div>
+<p>FOC on investment:</p>
+<div class="math notranslate nohighlight" id="equation-foc">
+<span class="eqno">(12)<a class="headerlink" href="#equation-foc" title="Permalink to this equation">¶</a></span>\[    \log\mathbb{E}\left[\left(1+ {\sf a}\right)\frac{S_{t+1}}{S_t}\Biggl| {\mathfrak F}_t\right] = 0 \label{foc}\]</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>The permanent income model that we study here consists of equations <a class="reference internal" href="#equation-v-balanced">(1)</a> to <a class="reference internal" href="#equation-h-balanced">(4)</a> that describe the representative consumer’s <strong>preferences</strong>, equation <a class="reference internal" href="#equation-mcmu-external">(9)</a> (or <a class="reference internal" href="#equation-mcmu-internal">(10)</a> and <a class="reference internal" href="#equation-mhmu">(11)</a>) that describes <strong>habit persistence</strong>, equation <a class="reference internal" href="#equation-foc">(12)</a> that describes the <strong>FOC on investment</strong>, equation <a class="reference internal" href="#equation-k-balanced">(5)</a> that restricts <strong>feasibility</strong>, <a class="reference internal" href="#equation-y-log-growth">(7)</a> and <a class="reference internal" href="#equation-exogenous">(8)</a> that describe the evolution of the consumer’s <strong>non-financial income process</strong> <span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span>.</p>
+</section>
+<section id="bibliography">
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id2"></span></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "ZhenhuanXie/pi_book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Stochastic Growth and Long-Run Risk</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="notebook1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">User Interface</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Zhenhuan Xie<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
