@@ -52,9 +52,3 @@ The last term is an adjustment for precaution, which is exactly the "additional 
 from demonstration import plot_figure_2
 plot_figure_2()
 ```
-
-
-## Bibliography
-
-```{bibliography} ../_bibliography/references.bib
-```
