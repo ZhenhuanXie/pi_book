@@ -12,6 +12,7 @@ kernelspec:
 (model_construction)=
 
 # Model Construction
+
 ## Preference: Recursive Utility with Habit Persistence
 
 We introduce $U_t$ via a CES aggregator of current consumption $C_t$ and a household stock variable $H_t$. $H_t$, which is a geometrically weighted average of current and past consumptions and the initial $H_0$, can be interpreted either as habits or as durable goods.
@@ -84,7 +85,7 @@ The reciprocal of the parameter $\rho$ describes the consumer's attitudes toward
 
 ##  Technology: AK with Non-Financial Income
 
-We construct a nonlinear version of a permanent income technology in the spirit of Hansen et al. (1999) and Hansen and Sargent (2013, ch. 11) that assumes the consumer's non-financial income process $\left\{Y_t\right\}$ is an exogenous multiplicative functional.
+We construct a nonlinear version of a permanent income technology in the spirit of {cite:t}`hansen1999robust` and {cite:t}`hansen2013recursive` Hansen and Sargent (2013, ch. 11) that assumes the consumer's non-financial income process $\left\{Y_t\right\}$ is an exogenous multiplicative functional.
 
 ```{math}
     K_{t+1} - K_t +C_t = {\sf a} K_t + Y_t
@@ -129,10 +130,10 @@ and $W_{t+1}$ is a $2 \times 1$ vector
 
 where $W_{1,t+1}$ and $W_{2,t+1}$ are shocks to $Z_{1,t+1}$ and $Z_{2,t+1}$, respectively, and $W_{t+1}$  follows a standardized multivariate normal distribution.
 
-We assume the following parameter values originally estimated by Hansen et al. (1999):
+We assume the following parameter values originally estimated by {cite:t}`hansen1999robust`:
 
 ```{math}
-    \log(\frac{Y_{t+1}}{Y_t}) = .01(Z_{1,t+1}+Z_{2,t+1}-Z_{2,t}) = .01\left(\begin{bmatrix} .704 & 0 & -.154\end{bmatrix} \begin{bmatrix} Z_{1,t}\\Z_{2,t}\\Z_{2,t-1}\end{bmatrix} + \begin{bmatrix}.144 & .206\end{bmatrix} \begin{bmatrix}W_{1,t+1}\\W_{2,t+1} \end{bmatrix}\right) + .00373
+    \log\left(\frac{Y_{t+1}}{Y_t}\right) = .01(Z_{1,t+1}+Z_{2,t+1}-Z_{2,t}) = .01\left(\begin{bmatrix} .704 & 0 & -.154\end{bmatrix} \begin{bmatrix} Z_{1,t}\\Z_{2,t}\\Z_{2,t-1}\end{bmatrix} + \begin{bmatrix}.144 & .206\end{bmatrix} \begin{bmatrix}W_{1,t+1}\\W_{2,t+1} \end{bmatrix}\right) + .00373
 ```
 ```{math}
     \begin{bmatrix}Z_{1,t+1}\\Z_{2,t+1}\\Z_{2,t}\end{bmatrix} = \begin{bmatrix}.704 & 0 & 0 \\0 & 1 & -.154\\ 0 & 1 & 0\end{bmatrix} \begin{bmatrix}Z_{1,t}\\Z_{2,t}\\Z_{2,t-1}\end{bmatrix} + \begin{bmatrix}.144 & 0 \\0 & .206 \\ 0 & 0\end{bmatrix} \begin{bmatrix} W_{1,t+1}\\ W_{2,t+1}\end{bmatrix}
@@ -191,9 +192,3 @@ FOC on investment:
 ## Summary
 
 The permanent income model that we study here consists of equations {eq}`V_balanced` to {eq}`H_balanced` that describe the representative consumer’s **preferences**, equation {eq}`MCMU_external` (or {eq}`MCMU_internal` and {eq}`MHMU`) that describes **habit persistence**, equation {eq}`FOC` that describes the **FOC on investment**, equation {eq}`K_balanced` that restricts **feasibility**, {eq}`Y_log_growth` and {eq}`exogenous` that describe the evolution of the consumer’s **non-financial income process** $\left\{Y_t\right\}$.
-
-
-## Bibliography
-
-```{bibliography} ../_bibliography/references.bib
-```

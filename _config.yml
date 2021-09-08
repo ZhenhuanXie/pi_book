@@ -1,41 +1,50 @@
 title : Stochastic Growth and Long-Run Risk
-author: Zhenhuan Xie
-logo: 'income.jpg'
+author: Lars P Hansen & Thomas Sargent
+logo: mfr.svg
 
 # Short description about the book
 description: >-
   Theory and computational examples of a permanent income model.
 
 execute:
-  execute_notebooks           : cache
+  execute_notebooks: force
 
 # HTML-specific settings
 html:
-  home_page_in_navbar         : false
+  home_page_in_navbar: false
+  use_issues_button: true
+  use_repository_button: true
 
 # Interact link settings
-notebook_interface            : "notebook"
+notebook_interface: "notebook"
 
 # Launch button settings
 repository:
-  url                         : https://github.com/ZhenhuanXie/pi_book
+  url: https://github.com/ZhenhuanXie/pi_book
 
 launch_buttons:
-  binderhub_url               : "https://mybinder.org"
-  thebe                       : true
+  binderhub_url: "https://mybinder.org"
+  thebe: true
 
 binder:
-  binderhub_url               : "https://mybinder.org"
-  text                        : "Launch binder"
+  binderhub_url: "https://mybinder.org"
+  text: "Launch binder"
 
 # LaTeX settings
 bibtex_bibfiles:
-   - _bibliography/references.bib
+   - bibliography.bib
 latex:
-  latex_engine                : "xelatex"
+  latex_engine: "xelatex"
   latex_documents:
     targetname: book.texxs
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - amsmath
 
 sphinx:
   config:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    bibtex_reference_style: author_year

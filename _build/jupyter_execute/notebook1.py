@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# (user_interface)=
 # # User Interface
-# This section serves as a demonstration on how to use ExpansionSuite code to solve recursive models. Users are given the flexibility of using parameters different from the default setting. Users simply have to enter the parameters in the user interface in section 2.1 below. Following the user interface, we also provide a detailed instruction on using the ExpansionSuite Code in section 2.2, in case a user may want to use the code elsewhere.
+# 
+# This section serves as a demonstration on how to use ExpansionSuite code to solve recursive models. Users are given the flexibility of using parameters different from the default setting. Users simply have to enter the parameters in the user interface below. Following the user interface, we also provide a detailed instruction on using the ExpansionSuite Code in {ref}`code_details`, in case a user may want to use the code elsewhere.
+# 
+# <font color='red'>I changed the section reference to hyperlink. Alternatively, "[Section 2.2](code_details)"</font>
 
 # In[1]:
 

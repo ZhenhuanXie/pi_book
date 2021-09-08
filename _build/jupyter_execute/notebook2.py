@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Code details
+# (code_details)=
+# # Code Details
 # 
 # This section serves as a demonstration on how to use ExpansionSuite code to solve recursive models.
 # 
@@ -9,7 +10,7 @@
 # 
 # For the **internal habit** specification, the first **6** variables in the table below are considered as **jump variables**, and the last **6** are considered as **state variables**. 
 # 
-# For the **external habit** specification, we don't have $\frac{MH_t}{MU_t}$ in the model, and all the other variables are still there, so there will be **5 controls and 6 states**. <font color='red'>LPH indicated that he didn't like the naming of "control" and "state". There will be a new terminology in the future.</font>
+# For the **external habit** specification, we don't have $\frac{MH_t}{MU_t}$ in the model, and all the other variables are still there, so there will be **5 controls and 6 states**. <font color='red'>LPH indicated that he didn't like the naming of "control" and "state". There will be a new terminology in the future.</font><font color='red'>LPH indicated that he didn't like the naming of "control" and "state". There will be a new terminology in the future.</font>
 # 
 # To avoid any confusion, the table below also provides the name of variables in the code to connect them with their math expressions.
 # 
@@ -270,7 +271,7 @@ plt.title(r'$\log(\frac{C_t}{Y_t})$ simulation')
 plt.show()
 
 
-# It turns out that in equilibrium, the deterministic path of $\log(\frac{C_t}{Y_t})$ is $\log(\frac{C_t}{Y_t}) \equiv 0$, $\forall t$, and the stochastic path oscillate around the deterministic path. This implies that consumption and income have the same deterministic growth rate in equilibrium, which doesn't come as a surprise (as expected from the FOC on investment).
+# It turns out that in equilibrium, the deterministic path of $\log(\frac{C_t}{Y_t})$ is $\log(\frac{C_t}{Y_t}) \equiv 0$ for any $t$, and the stochastic path oscillate around the deterministic path. This implies that consumption and income have the same deterministic growth rate in equilibrium, which doesn't come as a surprise (as expected from the FOC on investment).
 
 # ## Computing Impulse Response Functions
 # You may remember this is not the first time that you see impusle response functions in this notebook: Previously, we computed and plotted the IRFs of income process to two shocks, without knowing small-noise expansion at all! At that time, we only made use of the law of motion that $Y_t$ and the two components follow to construct IRFs.

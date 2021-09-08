@@ -46,8 +46,3 @@
 from demonstration import plot_figure_2
 plot_figure_2()
 
-
-# ## Bibliography
-# 
-# ```{bibliography} ../_bibliography/references.bib
-# ```
