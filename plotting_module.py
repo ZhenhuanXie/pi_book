@@ -1,10 +1,9 @@
 import numpy as np
 np.set_printoptions(precision=6, suppress=True)
 import matplotlib.pyplot as plt
-import pandas as pd
-from model_specification import eq_cond, ss_func
+from model_specification import eq_cond, ss_func, log_SDF_ex
 from expansion import recursive_expansion
-from elasticity import *
+from elasticity import price_elasticity
 try:
     import plotly.graph_objs as go
     from plotly.subplots import make_subplots
@@ -68,8 +67,8 @@ def plot_simulation(order, T, rhos, γ, χ, α, ϵ, a, g, A, B, habit_val, Kover
     
 
 
-def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha, epsilon,a,g,A,B,
-                 KoverY_ss, shock = 1, title = None):
+def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha, epsilon, a, g, A, B,
+                 KoverY_ss, shock = 1, title = None, confidence_interval = None):
     
     """
     Given a set of parameters, computes and displays the impulse responses of
@@ -107,12 +106,10 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
     Kmax = 0
     Imin = 0
     Imax = 0
-#    ϵ_exp_c_min = 0
-#    ϵ_exp_c_max = 0
-#    ϵ_p_c_min = 0
-#    ϵ_p_c_max = 0
+    ϵ_p_c_min = 0
+    ϵ_p_c_max = 0
 
-    fig = make_subplots(3, 2, print_grid = False, specs=[[{}, {}], [{}, {}], [{'colspan':2}, None]])
+    fig = make_subplots(3, 2, print_grid = False, specs=[[{}, {}], [{}, {}], [{}, {}]])
     
     # Update slider information
     if slider_varname == 'γ':
@@ -145,7 +142,6 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
                 var_shape = (7,6,2)
                 c_loc = 3
                 i_loc = 6
-#                mc_loc = 5
                 k_loc = 8
                 gy_loc = 9
                 args = (gamma, r, chi, alpha, epsilon, a, g, A, B, internal, KoverY_ss)
@@ -155,7 +151,6 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
                 var_shape = (6,6,2)
                 c_loc = 3
                 i_loc = 5
-#                mc_loc = 4
                 k_loc = 7
                 gy_loc = 8
                 args = (gamma, r, chi, alpha, epsilon, a, g, A, B, internal, KoverY_ss)
@@ -177,40 +172,21 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
             C_IRF = CmY_IRF + Y_IRF
             K_IRF = states[:, k_loc-n_Y] * 100
             I_IRF = controls[:, i_loc] * 100
-#            I_IRF[0] = None #for I, the first entry is not well defined. drop it
                 
-#            Z2_tp1 = modelSol.Z2_tp1 if second_order else None
-#            Y_growth = modelSol.X_tp1.split()[gy_loc]
-#            X_growth = modelSol.X_tp1 - modelSol.X_t
-#            X_growth_list = X_growth.split()
-#            CmY_growth = X_growth_list[c_loc]
-#            C_growth = CmY_growth + Y_growth
-#
-#            log_SDF = modelSol.approximate_fun(log_SDF_ex, args) + modelSol.log_M
-                
-#            if confidence_interval is None or order == 1:
-#            if True:
-#                ϵ_exp_c = exposure_elasticity(C_growth, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5).flatten()
-#                ϵ_p_c = price_elasticity(C_growth, log_SDF, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5).flatten()
-#
-#            else:
-#                ϵ_exp_c = exposure_elasticity(C_growth, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5)
-#                ϵ_p_c = price_elasticity(C_growth, log_SDF, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5)
-#
-#                ϵ_exp_c_lower = exposure_elasticity(C_growth, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5-confidence_interval/2)
-#                ϵ_p_c_lower = price_elasticity(C_growth, log_SDF, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5-confidence_interval/2)
-#
-#                ϵ_exp_c_upper = exposure_elasticity(C_growth, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5+confidence_interval/2)
-#                ϵ_p_c_upper = price_elasticity(C_growth, log_SDF, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5+confidence_interval/2)
+            Z2_tp1 = modelSol.Z2_tp1 if second_order else None
+            Y_growth = modelSol.X_tp1.split()[gy_loc]
+            X_growth = modelSol.X_tp1 - modelSol.X_t
+            X_growth_list = X_growth.split()
+            CmY_growth = X_growth_list[c_loc]
+            C_growth = CmY_growth + Y_growth
 
-#                ϵ_exp_c = np.ones(T)
-#                ϵ_p_c = np.ones(T)
-#
-#                ϵ_exp_c_lower = np.ones(T) * 0.8
-#                ϵ_p_c_lower = np.ones(T) * 0.8
-#
-#                ϵ_exp_c_upper = np.ones(T) * 1.2
-#                ϵ_p_c_upper = np.ones(T) * 1.2
+            log_SDF = modelSol.approximate_fun(log_SDF_ex, args) + modelSol.log_M
+            
+            ϵ_p_c = price_elasticity(C_growth, log_SDF, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5).flatten()
+                
+            if confidence_interval is not None and order == 2:
+                ϵ_p_c_lower = price_elasticity(C_growth, log_SDF, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5-confidence_interval/2).flatten()
+                ϵ_p_c_upper = price_elasticity(C_growth, log_SDF, modelSol.Z1_tp1, Z2_tp1, T, shock-1, 0.5+confidence_interval/2).flatten()
                 
             solved_models.append(modelSol)
 
@@ -225,18 +201,13 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
             Imin = min(Imin, np.min(I_IRF) * 1.2)
             Imax = max(Imax, np.max(I_IRF) * 1.2)
                 
-#            if confidence_interval is None or order == 1:
-#            if True:
-#                ϵ_exp_c_min = min(ϵ_exp_c_min, np.min(ϵ_exp_c) * 1.2)
-#                ϵ_exp_c_max = max(ϵ_exp_c_max, np.max(ϵ_exp_c) * 1.2)
-#                ϵ_p_c_min = min(ϵ_p_c_min, np.min(ϵ_p_c) * 1.2)
-#                ϵ_p_c_max = max(ϵ_p_c_max, np.max(ϵ_p_c) * 1.2)
-#
-#            else:
-#                ϵ_exp_c_min = min(ϵ_exp_c_min, np.min(ϵ_exp_c_lower) * 1.2)
-#                ϵ_exp_c_max = max(ϵ_exp_c_max, np.max(ϵ_exp_c_upper) * 1.2)
-#                ϵ_p_c_min = min(ϵ_p_c_min, np.min(ϵ_p_c_lower) * 1.2)
-#                ϵ_p_c_max = max(ϵ_p_c_max, np.max(ϵ_p_c_upper) * 1.2)
+            if confidence_interval is None or order == 1:
+                ϵ_p_c_min = min(ϵ_p_c_min, np.min(ϵ_p_c) * 1.2)
+                ϵ_p_c_max = max(ϵ_p_c_max, np.max(ϵ_p_c) * 1.2)
+
+            else:
+                ϵ_p_c_min = min(ϵ_p_c_min, np.min(ϵ_p_c_lower) * 1.2)
+                ϵ_p_c_max = max(ϵ_p_c_max, np.max(ϵ_p_c_upper) * 1.2)
                 
                 
             fig.add_scatter(y = C_IRF, row = 1, col = 1, visible = j == 0,
@@ -249,21 +220,16 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
                             name = 'rho = {}'.format(r), line = dict(color = (colors[i])))
             fig.add_scatter(y = Y_IRF, row = 3, col = 1, visible = j == 0,
                             name = 'rho = {}'.format(r), line = dict(color = (colors[i])))
+            fig.add_scatter(y = ϵ_p_c, row = 3, col = 2, visible = j == 0,
+                            name = 'rho = {}'.format(r), line = dict(color = (colors[i])))
                             
-#            if confidence_interval is not None and order == 2:
-#            if False:
-#
-#                fig.add_scatter(y = ϵ_exp_c_lower, row = 3, col = 1, visible = j == 0,
-#                            name = 'rho = {}'.format(r), line = dict(color = (colors[i])))
-#                fig.add_scatter(y = ϵ_exp_c_upper, row = 3, col = 1, visible = j == 0,
-#                            name = 'rho = {}'.format(r), line = dict(color = (colors[i])),
-#                               fill = 'tonexty')
-#
-#                fig.add_scatter(y = ϵ_p_c_lower, row = 3, col = 2, visible = j == 0,
-#                            name = 'rho = {}'.format(r), line = dict(color = (colors[i])))
-#                fig.add_scatter(y = ϵ_p_c_upper, row = 3, col = 2, visible = j == 0,
-#                            name = 'rho = {}'.format(r), line = dict(color = (colors[i])),
-#                               fill = 'tonexty')
+            if confidence_interval is not None and order == 2:
+
+                fig.add_scatter(y = ϵ_p_c_lower, row = 3, col = 2, visible = j == 0,
+                            name = 'rho = {}'.format(r), line = dict(color = (colors[i])))
+                fig.add_scatter(y = ϵ_p_c_upper, row = 3, col = 2, visible = j == 0,
+                            name = 'rho = {}'.format(r), line = dict(color = (colors[i])),
+                               fill = 'tonexty')
 
 
     steps = []
@@ -273,17 +239,14 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
             args = ['visible', ['legendonly'] * len(fig.data)],
             label = slider_varname + ' = '+'{}'.format(round(slider_vars[i], 2))
         )
-#        if confidence_interval is None or order == 1:
-#            for j in range(6):
-#                for k in range(len(rhos)):
-#                    step['args'][1][i * 6 + j + k * len(slider_vars) * 6] = True
-#        else:
-#            for j in range(10):
-#                for k in range(len(rhos)):
-#                    step['args'][1][i * 10 + j + k * len(slider_vars) * 10] = True
-        for j in range(5):
-            for k in range(len(rhos)):
-                step['args'][1][i * 5 + j + k * len(slider_vars) * 5] = True
+        if confidence_interval is None or order == 1:
+            for j in range(6):
+                for k in range(len(rhos)):
+                    step['args'][1][i * 6 + j + k * len(slider_vars) * 6] = True
+        else:
+            for j in range(8):
+                for k in range(len(rhos)):
+                    step['args'][1][i * 8 + j + k * len(slider_vars) * 8] = True
         steps.append(step)
 
 
@@ -300,13 +263,13 @@ def plot_impulse_pi(rhos, T, order, gamma, slider_varname, habit_val, chi, alpha
     fig['layout']['xaxis3'].update(range = [0, T])
     fig['layout']['xaxis4'].update(range = [0, T])
     fig['layout']['xaxis5'].update(range = [0, T])
-#    fig['layout']['xaxis6'].update(range = [0, T])
+    fig['layout']['xaxis6'].update(range = [0, T])
 
-    fig['layout']['yaxis1'].update(title=r'$\log C$', range = [Cmin, Cmax])
-    fig['layout']['yaxis2'].update(title=r'$\frac{K}{Y}$', range=[Kmin, Kmax])
-    fig['layout']['yaxis3'].update(title=r'$\log \frac{C}{Y}$', range = [CmYmin, CmYmax])#showgrid=False)
-    fig['layout']['yaxis4'].update(title=r'$\frac{I}{Y}$', range = [Imin, Imax])
-    fig['layout']['yaxis5'].update(title=r'$\log Y$', range = [Ymin, Ymax])
-#    fig['layout']['yaxis6'].update(title='Price Elasticity', range = [ϵ_p_c_min, ϵ_p_c_max])
+    fig['layout']['yaxis1'].update(title=r'$\text{IRF: }\log C$', range = [Cmin, Cmax])
+    fig['layout']['yaxis2'].update(title=r'$\text{IRF: }\frac{K}{Y}$', range=[Kmin, Kmax])
+    fig['layout']['yaxis3'].update(title=r'$\text{IRF: }\frac{C}{Y}$', range = [CmYmin, CmYmax])#showgrid=False)
+    fig['layout']['yaxis4'].update(title=r'$\text{IRF: }\frac{I}{Y}$', range = [Imin, Imax])
+    fig['layout']['yaxis5'].update(title=r'$\text{IRF: }\log Y$', range = [Ymin, Ymax])
+    fig['layout']['yaxis6'].update(title=r'$\text{Price Elasticity: }\log C$', range = [ϵ_p_c_min, ϵ_p_c_max])
     
     return fig, solved_models

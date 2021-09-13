@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Code Details &#8212; Stochastic Growth and Long-Run Risk</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,21 +34,21 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -255,7 +256,7 @@
         
               <div>
                 
-  <div class="section" id="code-details">
+  <section id="code-details">
 <span id="id1"></span><h1>Code Details<a class="headerlink" href="#code-details" title="Permalink to this headline">¶</a></h1>
 <p>This section serves as a demonstration on how to use ExpansionSuite code to solve recursive models.</p>
 <p>We start by assigning values to model parameters and defining equilibrium conditions. We decide to include the following variables as <span class="math notranslate nohighlight">\(X_t\)</span> and <span class="math notranslate nohighlight">\(X_{t+1}\)</span> in expansion.</p>
@@ -367,7 +368,7 @@
 </tbody>
 </table>
 <p>Note that <span class="math notranslate nohighlight">\(KoverY_t \equiv \frac{K_t}{Y_t}\)</span> is approximated as its level rather than logarithm in this model, because we intend to allow for negative capital (borrowing) in the evolution of <span class="math notranslate nohighlight">\(\frac{K_t}{Y_t}\)</span>, as actually happens in so-called open economy models.</p>
-<div class="section" id="user-input-1-equilibrium-conditions">
+<section id="user-input-1-equilibrium-conditions">
 <h2>User Input 1: Equilibrium Conditions<a class="headerlink" href="#user-input-1-equilibrium-conditions" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -468,8 +469,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="user-input-2-steady-states">
+</section>
+<section id="user-input-2-steady-states">
 <h2>User Input 2: Steady States<a class="headerlink" href="#user-input-2-steady-states" title="Permalink to this headline">¶</a></h2>
 <p>After having parameters and equilibrium conditions defined, we also need to define a function that returns the deterministic steady state (0th order expansion) value of model variables.</p>
 <p>For this model, we have a free initial condition that can be imposed on <span class="math notranslate nohighlight">\(\frac{K_0^0}{Y_0^0}\)</span>, i.e. there is a family of steady states indexed by <span class="math notranslate nohighlight">\(\frac{K_0^0}{Y_0^0}\)</span> subject to the restriction <span class="math notranslate nohighlight">\(\frac{C_0^0}{Y_0^0} &gt; 0\)</span> (otherwise we cannot take the logarithm of it).</p>
@@ -530,8 +531,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="solving-approximate-equilibrium-law-of-motion">
+</section>
+<section id="solving-approximate-equilibrium-law-of-motion">
 <h2>Solving (Approximate) Equilibrium Law of Motion<a class="headerlink" href="#solving-approximate-equilibrium-law-of-motion" title="Permalink to this headline">¶</a></h2>
 <p>Once we have the above two pieces of user inputs at hand, we are ready to apply small-noise expansion method to solve for (approximate) the equilibrium law of motion of every variable in the model. Let’s first try a 1st order approximation.</p>
 <div class="cell docutils container">
@@ -553,7 +554,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/hohanson/.local/lib/python3.8/site-packages/autograd/tracer.py:14: UserWarning: Output seems independent of input.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/autograd/tracer.py:14: UserWarning: Output seems independent of input.
   warnings.warn(&quot;Output seems independent of input.&quot;)
 </pre></div>
 </div>
@@ -588,19 +589,19 @@ The second order approximation of $X_{t+1}$ will have a bit complicated structur
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: array([[ 0.022513,  0.002828,  0.      ,  0.015984, -0.009595,  0.001512],
-        [ 0.020151,  0.002835,  0.      ,  0.01604 , -0.009618,  0.001512],
-        [ 0.841974,  0.000457,  0.      , -0.003318, -0.001551,  0.001536],
-        [ 0.064614,  0.002706,  0.      ,  0.014992, -0.009182,  0.001514],
-        [-0.09187 ,  0.000266,  0.      ,  0.002164, -0.000902, -0.000003],
-        [ 0.562755, -0.001628,  0.      , -0.013255,  0.005524,  0.000016],
-        [-0.065087,  0.003925,  0.      , -0.015137,  0.009242, -0.001513],
-        [ 0.904058,  0.000278,  0.      , -0.00478 , -0.000942,  0.001537],
-        [-0.071416,  1.000207,  0.      , -0.021785,  0.009078,  0.000026],
-        [ 0.      ,  0.      ,  0.      ,  0.00704 ,  0.      , -0.00154 ],
-        [ 0.      ,  0.      ,  0.      ,  0.704   ,  0.      ,  0.      ],
-        [ 0.      ,  0.      ,  0.      ,  0.      ,  1.      , -0.154   ],
-        [ 0.      ,  0.      ,  0.      ,  0.      ,  1.      ,  0.      ]]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;c&#39;: array([[-0.034644],
+        [-0.034744],
+        [-0.      ],
+        [ 0.      ],
+        [ 0.000184],
+        [ 0.000191],
+        [ 0.      ],
+        [ 0.      ],
+        [ 0.      ],
+        [ 0.      ],
+        [ 0.      ],
+        [ 0.      ],
+        [ 0.      ]]),
  &#39;w&#39;: array([[ 0.00327 , -0.002023],
         [ 0.003283, -0.002023],
         [-0.001108, -0.002057],
@@ -614,26 +615,26 @@ The second order approximation of $X_{t+1}$ will have a bit complicated structur
         [ 0.144   ,  0.      ],
         [ 0.      ,  0.206   ],
         [ 0.      ,  0.      ]]),
- &#39;c&#39;: array([[-0.034644],
-        [-0.034744],
-        [ 0.      ],
-        [ 0.      ],
-        [ 0.000184],
-        [ 0.000191],
-        [ 0.      ],
-        [ 0.      ],
-        [ 0.      ],
-        [ 0.      ],
-        [ 0.      ],
-        [ 0.      ],
-        [ 0.      ]])}
+ &#39;x&#39;: array([[ 0.022513,  0.002828,  0.      ,  0.015984, -0.009595,  0.001512],
+        [ 0.020151,  0.002835,  0.      ,  0.01604 , -0.009618,  0.001512],
+        [ 0.841974,  0.000457,  0.      , -0.003318, -0.001551,  0.001536],
+        [ 0.064614,  0.002706,  0.      ,  0.014992, -0.009182,  0.001514],
+        [-0.09187 ,  0.000266,  0.      ,  0.002164, -0.000902, -0.000003],
+        [ 0.562755, -0.001628,  0.      , -0.013255,  0.005524,  0.000016],
+        [-0.065087,  0.003925,  0.      , -0.015137,  0.009242, -0.001513],
+        [ 0.904058,  0.000278,  0.      , -0.00478 , -0.000942,  0.001537],
+        [-0.071416,  1.000207,  0.      , -0.021785,  0.009078,  0.000026],
+        [ 0.      ,  0.      ,  0.      ,  0.00704 ,  0.      , -0.00154 ],
+        [ 0.      ,  0.      ,  0.      ,  0.704   ,  0.      ,  0.      ],
+        [ 0.      ,  0.      ,  0.      ,  0.      ,  1.      , -0.154   ],
+        [ 0.      ,  0.      ,  0.      ,  0.      ,  1.      ,  0.      ]])}
 </pre></div>
 </div>
 </div>
 </div>
 <p>With the law of motion at hand, it would be a piece of cake to perform tasks such as simulation, or compute important quantities that reflect the dynamics in the model, for example, impulse response functions. The ExpansionSuite code provides such functionalities.</p>
-</div>
-<div class="section" id="simulation">
+</section>
+<section id="simulation">
 <h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we are interested in knowing how the model variable <span class="math notranslate nohighlight">\(\log(\frac{C_t}{Y_t})\)</span> evolves over time if it follows the (approximate) equilibrium law of motion. We just need to generate shocks throughout the horizon that we are interested in (for example, 100 periods), and feed the shocks to the <code class="docutils literal notranslate"><span class="pre">simulate</span></code> method of <code class="docutils literal notranslate"><span class="pre">modelSol</span></code>.</p>
 <p>In the cell below, we first try 0 shocks (i.e. examine the deterministic path) and then try bivariate standard normal shocks.</p>
@@ -663,8 +664,8 @@ The second order approximation of $X_{t+1}$ will have a bit complicated structur
 </div>
 </div>
 <p>It turns out that in equilibrium, the deterministic path of <span class="math notranslate nohighlight">\(\log(\frac{C_t}{Y_t})\)</span> is <span class="math notranslate nohighlight">\(\log(\frac{C_t}{Y_t}) \equiv 0\)</span> for any <span class="math notranslate nohighlight">\(t\)</span>, and the stochastic path oscillate around the deterministic path. This implies that consumption and income have the same deterministic growth rate in equilibrium, which doesn’t come as a surprise (as expected from the FOC on investment).</p>
-</div>
-<div class="section" id="computing-impulse-response-functions">
+</section>
+<section id="computing-impulse-response-functions">
 <h2>Computing Impulse Response Functions<a class="headerlink" href="#computing-impulse-response-functions" title="Permalink to this headline">¶</a></h2>
 <p>You may remember this is not the first time that you see impusle response functions in this notebook: Previously, we computed and plotted the IRFs of income process to two shocks, without knowing small-noise expansion at all! At that time, we only made use of the law of motion that <span class="math notranslate nohighlight">\(Y_t\)</span> and the two components follow to construct IRFs.</p>
 <p>Now that we’re using small-noise expasion method, we have included a bunch of more variables in the linear space-system, we are able to use the approximate law of motion to construct <strong>“new” IRFs</strong> of income, again to the two shocks. How will the “new” IRFs look like? We can directly use the <code class="docutils literal notranslate"><span class="pre">IRF</span></code> method of <code class="docutils literal notranslate"><span class="pre">modelSol</span></code> to obtain the results.</p>
@@ -743,8 +744,8 @@ The second order approximation of $X_{t+1}$ will have a bit complicated structur
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

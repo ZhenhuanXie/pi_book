@@ -1,7 +1,7 @@
 # Stochastic Growth and Long-Run Risk 
 
 
-This notebook displays computational results from solving a permanent income model using small noise expansion method {cite:ps}`hansen2021risk`. This model is a version of Friedman's permanent income model, and habit persistence preferences, motivated by the work of Hansen, Sargent and Tallarini, is considered in computation.
+This notebook serves as an example from {cite:ps}`hansen2021risk`. It displays computational results of a permanent income model. This model is a version of Friedman's permanent income model, where habit persistence preferences, motivated by {cite:ts}`hansen1999robust`, is considered. The model is approximately solved using a small noise expansion technique as in {cite:ts}`lombardouhlig`.
 
 This notebook is mainly for illustration of model specific results. If interested in more general computation details, users can refer to the Computational Details notebook accompanying this notebook.
 

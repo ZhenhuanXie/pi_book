@@ -15,6 +15,10 @@
 #     V_t = \left[(1-\beta)U_t^{1-\rho}+\beta R_t^{1-\rho}\right]^{\frac{1}{1-\rho}} 
 # ```
 # 
+# \begin{equation}
+# 	
+# \end{equation}
+# 
 # In the special case of $\rho = 1$,
 # 
 # ```{math}

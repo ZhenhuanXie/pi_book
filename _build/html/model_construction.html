@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Model Construction &#8212; Stochastic Growth and Long-Run Risk</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,21 +34,21 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -253,14 +254,18 @@
         
               <div>
                 
-  <div class="section" id="model-construction">
+  <section id="model-construction">
 <span id="id1"></span><h1>Model Construction<a class="headerlink" href="#model-construction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="preference-recursive-utility-with-habit-persistence">
+<section id="preference-recursive-utility-with-habit-persistence">
 <h2>Preference: Recursive Utility with Habit Persistence<a class="headerlink" href="#preference-recursive-utility-with-habit-persistence" title="Permalink to this headline">¶</a></h2>
 <p>We introduce <span class="math notranslate nohighlight">\(U_t\)</span> via a CES aggregator of current consumption <span class="math notranslate nohighlight">\(C_t\)</span> and a household stock variable <span class="math notranslate nohighlight">\(H_t\)</span>. <span class="math notranslate nohighlight">\(H_t\)</span>, which is a geometrically weighted average of current and past consumptions and the initial <span class="math notranslate nohighlight">\(H_0\)</span>, can be interpreted either as habits or as durable goods.</p>
 <p>A representative household ranks <span class="math notranslate nohighlight">\(\{U_t: t\geq 0\}\)</span> processes with a utility functional <span class="math notranslate nohighlight">\(\{V_t: t\geq 0\}\)</span> processes. We also introduce an <span class="math notranslate nohighlight">\(\{R_t: t\geq 0\}\)</span> process as a risk adjusted version of  <span class="math notranslate nohighlight">\(\{V_t: t\geq 0\}\)</span>, called a certainty equivalent. <span class="math notranslate nohighlight">\(V_t\)</span>, <span class="math notranslate nohighlight">\(R_t\)</span>, <span class="math notranslate nohighlight">\(U_t\)</span> and <span class="math notranslate nohighlight">\(H_t\)</span> are defined via the following recursion:</p>
 <div class="math notranslate nohighlight">
 \[    V_t = \left[(1-\beta)U_t^{1-\rho}+\beta R_t^{1-\rho}\right]^{\frac{1}{1-\rho}} \]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5a8cf754-d115-4c36-b880-5a2e6055ba5a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-5a8cf754-d115-4c36-b880-5a2e6055ba5a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+	
+\end{equation}\]</div>
 <p>In the special case of <span class="math notranslate nohighlight">\(\rho = 1\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[    V_t = U_t^{1-\beta}R_t^{\beta} \]</div>
@@ -275,37 +280,37 @@
 \[    H_{t+1}  = \chi H_t + (1-\chi) C_t \]</div>
 <p>Stochastic growth in the income process (will be introduced shortly) makes it natural to divide every variable in the above equations by <span class="math notranslate nohighlight">\(Y_t\)</span> to form a <strong>balanced growth version</strong>:</p>
 <div class="math notranslate nohighlight" id="equation-v-balanced">
-<span class="eqno">(1)<a class="headerlink" href="#equation-v-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{V_t}{Y_t} = \left[(1-\beta)\left(\frac{U_t}{Y_t}\right)^{1-\rho}+\beta\left(\frac{R_t}{Y_t}\right)^{1-\rho}\right]^{\frac{1}{1-\rho}}\]</div>
-<p>In the special case of <span class="math notranslate nohighlight">\(\rho = 1\)</span>, <a class="reference internal" href="#equation-v-balanced">(1)</a> becomes:</p>
+<span class="eqno">(2)<a class="headerlink" href="#equation-v-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{V_t}{Y_t} = \left[(1-\beta)\left(\frac{U_t}{Y_t}\right)^{1-\rho}+\beta\left(\frac{R_t}{Y_t}\right)^{1-\rho}\right]^{\frac{1}{1-\rho}}\]</div>
+<p>In the special case of <span class="math notranslate nohighlight">\(\rho = 1\)</span>, <a class="reference internal" href="#equation-v-balanced">(2)</a> becomes:</p>
 <div class="math notranslate nohighlight">
 \[    \frac{V_t}{Y_t} = \left(\frac{U_t}{Y_t}\right)^{1-\beta} \left(\frac{R_t}{Y_t}\right)^{\beta}\]</div>
 <div class="math notranslate nohighlight" id="equation-r-balanced">
-<span class="eqno">(2)<a class="headerlink" href="#equation-r-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{R_t}{Y_t} = \mathbb{E}\left[\left(\frac{V_{t+1}}{Y_{t+1}}\frac{Y_{t+1}}{Y_t}\right)^{1-\gamma} | {\mathfrak F}_t\right]^{\frac{1}{1-\gamma}}\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-r-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{R_t}{Y_t} = \mathbb{E}\left[\left(\frac{V_{t+1}}{Y_{t+1}}\frac{Y_{t+1}}{Y_t}\right)^{1-\gamma} | {\mathfrak F}_t\right]^{\frac{1}{1-\gamma}}\]</div>
 <div class="math notranslate nohighlight" id="equation-u-balanced">
-<span class="eqno">(3)<a class="headerlink" href="#equation-u-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{U_t}{Y_t} = \left[(1-\alpha)\left(\frac{C_t}{Y_t}\right)^{1-\epsilon}+\alpha \left(\frac{H_t}{Y_t}\right)^{1-\epsilon}\right]^{\frac{1}{1-\epsilon}}\]</div>
-<p>In the special case of <span class="math notranslate nohighlight">\(\epsilon = 1\)</span>, <a class="reference internal" href="#equation-u-balanced">(3)</a> becomes:</p>
+<span class="eqno">(4)<a class="headerlink" href="#equation-u-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{U_t}{Y_t} = \left[(1-\alpha)\left(\frac{C_t}{Y_t}\right)^{1-\epsilon}+\alpha \left(\frac{H_t}{Y_t}\right)^{1-\epsilon}\right]^{\frac{1}{1-\epsilon}}\]</div>
+<p>In the special case of <span class="math notranslate nohighlight">\(\epsilon = 1\)</span>, <a class="reference internal" href="#equation-u-balanced">(4)</a> becomes:</p>
 <div class="math notranslate nohighlight">
 \[    \frac{U_t}{Y_t} = \left(\frac{C_t}{Y_t}\right)^{1-\alpha} \left(\frac{H_t}{Y_t}\right)^{\alpha}\]</div>
 <div class="math notranslate nohighlight" id="equation-h-balanced">
-<span class="eqno">(4)<a class="headerlink" href="#equation-h-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{H_{t+1}}{Y_{t+1}}\frac{Y_{t+1}}{Y_t}  = \chi \frac{H_t}{Y_t} + (1-\chi) \frac{C_t}{Y_t}\]</div>
+<span class="eqno">(5)<a class="headerlink" href="#equation-h-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{H_{t+1}}{Y_{t+1}}\frac{Y_{t+1}}{Y_t}  = \chi \frac{H_t}{Y_t} + (1-\chi) \frac{C_t}{Y_t}\]</div>
 <p>The reciprocal of the parameter <span class="math notranslate nohighlight">\(\rho\)</span> describes the consumer’s attitudes toward intertemporal substitution, while the parameter <span class="math notranslate nohighlight">\(\gamma\)</span> describes the consumer’s attitudes toward risk.</p>
-</div>
-<div class="section" id="technology-ak-with-non-financial-income">
+</section>
+<section id="technology-ak-with-non-financial-income">
 <h2>Technology: AK with Non-Financial Income<a class="headerlink" href="#technology-ak-with-non-financial-income" title="Permalink to this headline">¶</a></h2>
-<p>We construct a nonlinear version of a permanent income technology in the spirit of <span id="id2">Hansen <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3">1999</a>]</span> and <span id="id3">Hansen and Sargent [<a class="reference internal" href="bibliography.html#id4">2013</a>]</span> Hansen and Sargent (2013, ch. 11) that assumes the consumer’s non-financial income process <span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span> is an exogenous multiplicative functional.</p>
+<p>We construct a nonlinear version of a permanent income technology in the spirit of <span id="id2">Hansen <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3">1999</a>]</span> and <span id="id3">Hansen and Sargent [<a class="reference internal" href="bibliography.html#id5">2013</a>]</span> Hansen and Sargent (2013, ch. 11) that assumes the consumer’s non-financial income process <span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span> is an exogenous multiplicative functional.</p>
 <div class="math notranslate nohighlight">
 \[    K_{t+1} - K_t +C_t = {\sf a} K_t + Y_t\]</div>
 <p>balanced growth version:</p>
 <div class="math notranslate nohighlight" id="equation-k-balanced">
-<span class="eqno">(5)<a class="headerlink" href="#equation-k-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{K_{t+1}}{Y_{t+1}} \frac{Y_{t+1}}{Y_t} -\frac{K_t}{Y_t} + \frac{C_t}{Y_t} = {\sf a} \frac{K_t}{Y_t} + 1\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-k-balanced" title="Permalink to this equation">¶</a></span>\[    \frac{K_{t+1}}{Y_{t+1}} \frac{Y_{t+1}}{Y_t} -\frac{K_t}{Y_t} + \frac{C_t}{Y_t} = {\sf a} \frac{K_t}{Y_t} + 1\]</div>
 <p>We use this to define a model variable “scaled gross investment”:</p>
 <div class="math notranslate nohighlight" id="equation-investment">
-<span class="eqno">(6)<a class="headerlink" href="#equation-investment" title="Permalink to this equation">¶</a></span>\[    \frac{I_{t}}{Y_t} = \frac{K_{t+1} - K_t}{Y_t}\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-investment" title="Permalink to this equation">¶</a></span>\[    \frac{I_{t}}{Y_t} = \frac{K_{t+1} - K_t}{Y_t}\]</div>
 <p><span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span> has two components <span class="math notranslate nohighlight">\(Z_{1,t}\)</span> and <span class="math notranslate nohighlight">\(Z_{2,t}\)</span>, and they follow the recursion:</p>
 <div class="math notranslate nohighlight" id="equation-y-log-growth">
-<span class="eqno">(7)<a class="headerlink" href="#equation-y-log-growth" title="Permalink to this equation">¶</a></span>\[    \log Y_{t+1} - \log Y_t = D{Z_t} + FW_{t+1} + {\sf{g}}\]</div>
+<span class="eqno">(8)<a class="headerlink" href="#equation-y-log-growth" title="Permalink to this equation">¶</a></span>\[    \log Y_{t+1} - \log Y_t = D{Z_t} + FW_{t+1} + {\sf{g}}\]</div>
 <div class="math notranslate nohighlight" id="equation-exogenous">
-<span class="eqno">(8)<a class="headerlink" href="#equation-exogenous" title="Permalink to this equation">¶</a></span>\[    Z_{t+1} = AZ_t + BW_{t+1}\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-exogenous" title="Permalink to this equation">¶</a></span>\[    Z_{t+1} = AZ_t + BW_{t+1}\]</div>
 <p><span class="math notranslate nohighlight">\(Z_t\)</span> is a <span class="math notranslate nohighlight">\(3 \times 1\)</span> vector</p>
 <div class="math notranslate nohighlight">
 \[    Z_t = \left[Z_{1,t}, Z_{2,t}, Z_{2,t-1}\right]^{\prime}\]</div>
@@ -331,8 +336,8 @@
 <img alt="_images/model_construction_1_0.png" src="_images/model_construction_1_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="stochastic-discount-factor-foc-on-investment">
+</section>
+<section id="stochastic-discount-factor-foc-on-investment">
 <h2>Stochastic Discount Factor; FOC on investment<a class="headerlink" href="#stochastic-discount-factor-foc-on-investment" title="Permalink to this headline">¶</a></h2>
 <p>SDF increment in units of <span class="math notranslate nohighlight">\(U_t\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -344,27 +349,27 @@
 <li><p>External:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-mcmu-external">
-<span class="eqno">(9)<a class="headerlink" href="#equation-mcmu-external" title="Permalink to this equation">¶</a></span>\[    \frac{MC_t}{MU_t} = (1-\alpha)\left( \frac{U_t}{C_t} \right)^\epsilon\]</div>
+<span class="eqno">(10)<a class="headerlink" href="#equation-mcmu-external" title="Permalink to this equation">¶</a></span>\[    \frac{MC_t}{MU_t} = (1-\alpha)\left( \frac{U_t}{C_t} \right)^\epsilon\]</div>
 <ul class="simple">
 <li><p>Internal:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-mcmu-internal">
-<span class="eqno">(10)<a class="headerlink" href="#equation-mcmu-internal" title="Permalink to this equation">¶</a></span>\[    \frac{MC_t}{MU_t} = (1-\alpha)\left( \frac{U_t}{C_t} \right)^\epsilon + (1-\chi) \mathbb{E}\left[\widetilde{\frac{S_{t+1}}{S_t}}\frac{MH_{t+1}}{MU_{t+1}} \Biggl| {\mathfrak F}_t\right]\]</div>
+<span class="eqno">(11)<a class="headerlink" href="#equation-mcmu-internal" title="Permalink to this equation">¶</a></span>\[    \frac{MC_t}{MU_t} = (1-\alpha)\left( \frac{U_t}{C_t} \right)^\epsilon + (1-\chi) \mathbb{E}\left[\widetilde{\frac{S_{t+1}}{S_t}}\frac{MH_{t+1}}{MU_{t+1}} \Biggl| {\mathfrak F}_t\right]\]</div>
 <p>where <span class="math notranslate nohighlight">\(\frac{MH_t}{MU_t}\)</span> satisfies:</p>
 <div class="math notranslate nohighlight" id="equation-mhmu">
-<span class="eqno">(11)<a class="headerlink" href="#equation-mhmu" title="Permalink to this equation">¶</a></span>\[    \frac{MH_t}{MU_t} = \alpha\left( \frac{U_t}{H_t} \right)^\epsilon + \chi \mathbb{E}\left[\widetilde{\frac{S_{t+1}}{S_t}}\frac{MH_{t+1}}{MU_{t+1}} \Biggl| {\mathfrak F}_t \right]\]</div>
+<span class="eqno">(12)<a class="headerlink" href="#equation-mhmu" title="Permalink to this equation">¶</a></span>\[    \frac{MH_t}{MU_t} = \alpha\left( \frac{U_t}{H_t} \right)^\epsilon + \chi \mathbb{E}\left[\widetilde{\frac{S_{t+1}}{S_t}}\frac{MH_{t+1}}{MU_{t+1}} \Biggl| {\mathfrak F}_t \right]\]</div>
 <p>Then we have SDF increment in units of <span class="math notranslate nohighlight">\(C_t\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[    \frac{S_{t+1}}{S_t} = \widetilde{\left(\frac{S_{t+1}}{S_t}\right)}\left(\frac{{MC_{t+1}}/{MU_{t+1}}}{{MC_t}/{MU_t}}\right)\]</div>
 <p>FOC on investment:</p>
 <div class="math notranslate nohighlight" id="equation-foc">
-<span class="eqno">(12)<a class="headerlink" href="#equation-foc" title="Permalink to this equation">¶</a></span>\[    \log\mathbb{E}\left[\left(1+ {\sf a}\right)\frac{S_{t+1}}{S_t}\Biggl| {\mathfrak F}_t\right] = 0 \label{foc}\]</div>
-</div>
-<div class="section" id="summary">
+<span class="eqno">(13)<a class="headerlink" href="#equation-foc" title="Permalink to this equation">¶</a></span>\[    \log\mathbb{E}\left[\left(1+ {\sf a}\right)\frac{S_{t+1}}{S_t}\Biggl| {\mathfrak F}_t\right] = 0 \label{foc}\]</div>
+</section>
+<section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>The permanent income model that we study here consists of equations <a class="reference internal" href="#equation-v-balanced">(1)</a> to <a class="reference internal" href="#equation-h-balanced">(4)</a> that describe the representative consumer’s <strong>preferences</strong>, equation <a class="reference internal" href="#equation-mcmu-external">(9)</a> (or <a class="reference internal" href="#equation-mcmu-internal">(10)</a> and <a class="reference internal" href="#equation-mhmu">(11)</a>) that describes <strong>habit persistence</strong>, equation <a class="reference internal" href="#equation-foc">(12)</a> that describes the <strong>FOC on investment</strong>, equation <a class="reference internal" href="#equation-k-balanced">(5)</a> that restricts <strong>feasibility</strong>, <a class="reference internal" href="#equation-y-log-growth">(7)</a> and <a class="reference internal" href="#equation-exogenous">(8)</a> that describe the evolution of the consumer’s <strong>non-financial income process</strong> <span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span>.</p>
-</div>
-</div>
+<p>The permanent income model that we study here consists of equations <a class="reference internal" href="#equation-v-balanced">(2)</a> to <a class="reference internal" href="#equation-h-balanced">(5)</a> that describe the representative consumer’s <strong>preferences</strong>, equation <a class="reference internal" href="#equation-mcmu-external">(10)</a> (or <a class="reference internal" href="#equation-mcmu-internal">(11)</a> and <a class="reference internal" href="#equation-mhmu">(12)</a>) that describes <strong>habit persistence</strong>, equation <a class="reference internal" href="#equation-foc">(13)</a> that describes the <strong>FOC on investment</strong>, equation <a class="reference internal" href="#equation-k-balanced">(6)</a> that restricts <strong>feasibility</strong>, <a class="reference internal" href="#equation-y-log-growth">(8)</a> and <a class="reference internal" href="#equation-exogenous">(9)</a> that describe the evolution of the consumer’s <strong>non-financial income process</strong> <span class="math notranslate nohighlight">\(\left\{Y_t\right\}\)</span>.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

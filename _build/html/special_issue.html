@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Special Issue &#8212; Stochastic Growth and Long-Run Risk</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,21 +34,21 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -238,17 +239,17 @@
         
               <div>
                 
-  <div class="section" id="special-issue">
+  <section id="special-issue">
 <span id="id1"></span><h1>Special Issue<a class="headerlink" href="#special-issue" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="endogenously-determined-subjective-discount-rate">
+<section id="endogenously-determined-subjective-discount-rate">
 <h2>Endogenously Determined Subjective Discount Rate<a class="headerlink" href="#endogenously-determined-subjective-discount-rate" title="Permalink to this headline">¶</a></h2>
-<p>Before moving forward, let’s have another look at the FOC <a class="reference internal" href="model_construction.html#equation-foc">(12)</a>. For compactness, we define <span class="math notranslate nohighlight">\(\delta = -\log\beta\)</span>. Essentially, FOC says</p>
+<p>Before moving forward, let’s have another look at the FOC <a class="reference internal" href="model_construction.html#equation-foc">(13)</a>. For compactness, we define <span class="math notranslate nohighlight">\(\delta = -\log\beta\)</span>. Essentially, FOC says</p>
 <div class="math notranslate nohighlight" id="equation-foc-detail">
-<span class="eqno">(13)<a class="headerlink" href="#equation-foc-detail" title="Permalink to this equation">¶</a></span>\[    \log(1+{\sf a}) -\delta + \log\tilde{\mathbb{E}}\left[\left(\frac{V_{t+1}}{R_t}\right)^{\rho-1} \left(\frac{U_{t+1}}{U_t}\right)^{-\rho} \left(\frac{{MC_{t+1}}/{MU_{t+1}}}{{MC_t}/{MU_t}}\right) \Biggl| {\mathfrak F}_t\right] = 0 \label{foc_new}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\tilde{\mathbb{E}}[\cdotp | \mathfrak F_t]\)</span> is the conditional expectation operator under the <strong>altered probability measure</strong>, i.e. taking into account the <span class="math notranslate nohighlight">\(\left(\frac{V_{t+1}}{R_t}\right)^{1-\gamma}\)</span> term. Here <span class="math notranslate nohighlight">\(\sf a\)</span> is an exogenous one period risk-free capital growth rate, thus the subjective discount rate <span class="math notranslate nohighlight">\(\delta\)</span> is not exogenously given, but rather endogenously pinned down by <a class="reference internal" href="#equation-foc-detail">(13)</a>. Our small noise expansion method gives the law of motion of model variables <span class="math notranslate nohighlight">\(X_{t+1}({\sf q}) = \psi[X_t({\sf q}), {\sf q}W_{t+1}, {\sf q}]\)</span> , and if we plug it into <a class="reference internal" href="#equation-foc-detail">(13)</a>, there will surely be a bunch of terms that involve <span class="math notranslate nohighlight">\(W_{t+1}\)</span>. Since the structure of <span class="math notranslate nohighlight">\(W_{t+1}\)</span> under the altered probability measure differs as the order of expansion differs, it’s clear that <span class="math notranslate nohighlight">\(\beta\)</span> pinned down by <a class="reference internal" href="#equation-foc-detail">(13)</a> in order 0, 1, 2 differs. Let’s write them as <span class="math notranslate nohighlight">\(\delta^0\)</span>, <span class="math notranslate nohighlight">\(\delta^1\)</span> and <span class="math notranslate nohighlight">\(\delta^2\)</span>.</p>
-<p>In the deterministic steady state (order 0), <span class="math notranslate nohighlight">\(\delta^0\)</span> can be easily solved from <a class="reference internal" href="#equation-foc-detail">(13)</a> because change of measure and expectation operator don’t matter (no <span class="math notranslate nohighlight">\(W_{t+1}\)</span> terms).</p>
-<p>In order 1, an <strong>additional constant term</strong> needs to be added to <a class="reference internal" href="#equation-foc-detail">(13)</a>, which equals <span class="math notranslate nohighlight">\(\delta^0 - \delta^1\)</span>. Without this constant term, the LHS of <a class="reference internal" href="#equation-foc-detail">(13)</a> is obviously non-zero, and the approximated law of motion coming from expansion that can make the wrong FOC “hold” will be wrong (not the equilibria that we want).</p>
-<p>Similarly, in order 2, an <strong>additional constant term</strong> needs to be added to <a class="reference internal" href="#equation-foc-detail">(13)</a>, which equals <span class="math notranslate nohighlight">\(\delta^1 - \delta^2\)</span>.</p>
+<span class="eqno">(14)<a class="headerlink" href="#equation-foc-detail" title="Permalink to this equation">¶</a></span>\[    \log(1+{\sf a}) -\delta + \log\tilde{\mathbb{E}}\left[\left(\frac{V_{t+1}}{R_t}\right)^{\rho-1} \left(\frac{U_{t+1}}{U_t}\right)^{-\rho} \left(\frac{{MC_{t+1}}/{MU_{t+1}}}{{MC_t}/{MU_t}}\right) \Biggl| {\mathfrak F}_t\right] = 0 \label{foc_new}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{\mathbb{E}}[\cdotp | \mathfrak F_t]\)</span> is the conditional expectation operator under the <strong>altered probability measure</strong>, i.e. taking into account the <span class="math notranslate nohighlight">\(\left(\frac{V_{t+1}}{R_t}\right)^{1-\gamma}\)</span> term. Here <span class="math notranslate nohighlight">\(\sf a\)</span> is an exogenous one period risk-free capital growth rate, thus the subjective discount rate <span class="math notranslate nohighlight">\(\delta\)</span> is not exogenously given, but rather endogenously pinned down by <a class="reference internal" href="#equation-foc-detail">(14)</a>. Our small noise expansion method gives the law of motion of model variables <span class="math notranslate nohighlight">\(X_{t+1}({\sf q}) = \psi[X_t({\sf q}), {\sf q}W_{t+1}, {\sf q}]\)</span> , and if we plug it into <a class="reference internal" href="#equation-foc-detail">(14)</a>, there will surely be a bunch of terms that involve <span class="math notranslate nohighlight">\(W_{t+1}\)</span>. Since the structure of <span class="math notranslate nohighlight">\(W_{t+1}\)</span> under the altered probability measure differs as the order of expansion differs, it’s clear that <span class="math notranslate nohighlight">\(\beta\)</span> pinned down by <a class="reference internal" href="#equation-foc-detail">(14)</a> in order 0, 1, 2 differs. Let’s write them as <span class="math notranslate nohighlight">\(\delta^0\)</span>, <span class="math notranslate nohighlight">\(\delta^1\)</span> and <span class="math notranslate nohighlight">\(\delta^2\)</span>.</p>
+<p>In the deterministic steady state (order 0), <span class="math notranslate nohighlight">\(\delta^0\)</span> can be easily solved from <a class="reference internal" href="#equation-foc-detail">(14)</a> because change of measure and expectation operator don’t matter (no <span class="math notranslate nohighlight">\(W_{t+1}\)</span> terms).</p>
+<p>In order 1, an <strong>additional constant term</strong> needs to be added to <a class="reference internal" href="#equation-foc-detail">(14)</a>, which equals <span class="math notranslate nohighlight">\(\delta^0 - \delta^1\)</span>. Without this constant term, the LHS of <a class="reference internal" href="#equation-foc-detail">(14)</a> is obviously non-zero, and the approximated law of motion coming from expansion that can make the wrong FOC “hold” will be wrong (not the equilibria that we want).</p>
+<p>Similarly, in order 2, an <strong>additional constant term</strong> needs to be added to <a class="reference internal" href="#equation-foc-detail">(14)</a>, which equals <span class="math notranslate nohighlight">\(\delta^1 - \delta^2\)</span>.</p>
 <p><font color='red'>Technical details:</font> When introducing the additional free constant term, we also impose an additional restriction, to set the constant component that applies to <span class="math notranslate nohighlight">\(\frac{K_t}{Y_t}\)</span> to zero. We make this latter adjustment because we want to set <span class="math notranslate nohighlight">\(\frac{K_0}{Y_0}\)</span> as an initial condition and don’t want to adjust it later when we include higher order terms in an expansion.</p>
 <p><font color='red'>As in LPH’s <em>PI Model Notes</em>,</font> we provide a simplified example where there’s no habit/durable goods. It can be viewed as a special case of the preference described in section 1.1, by setting <span class="math notranslate nohighlight">\(\alpha = 0\)</span>, <span class="math notranslate nohighlight">\(\rho = 1\)</span>. In this special case, <font color='red'>LPH showed that</font></p>
 <p>In order 0 approximation,</p>
@@ -270,8 +271,8 @@
 <img alt="_images/special_issue_1_0.png" src="_images/special_issue_1_0.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
